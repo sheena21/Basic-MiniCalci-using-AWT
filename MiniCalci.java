@@ -16,7 +16,8 @@ public class MiniCalci extends Frame {
         p.setBounds(20,50,300,300);
         p.setLayout(null);
         add(p);
-        addWindowListener(new Demo());
+        Demo d=new Demo();
+        addWindowListener(d);
         l1=new Label("Enter 1st No.:");
         l1.setBounds(50,20,80,20);
         l1.setBackground(Color.GREEN);
@@ -80,6 +81,8 @@ public class MiniCalci extends Frame {
         
         
         }
+
+    
      class A implements ActionListener {
         public void actionPerformed(ActionEvent e)
         {
@@ -170,50 +173,7 @@ public class MiniCalci extends Frame {
             }
         }
     }
-      class Demo implements WindowListener{
-         
-         
-         
-         public void WindowClosing(WindowEvent e)
-         {
-             dispose();
-         }
-
-        @Override
-        public void windowOpened(WindowEvent e) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-
-        @Override
-        public void windowClosing(WindowEvent e) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-
-        @Override
-        public void windowClosed(WindowEvent e) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-
-        @Override
-        public void windowIconified(WindowEvent e) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-
-        @Override
-        public void windowDeiconified(WindowEvent e) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-
-        @Override
-        public void windowActivated(WindowEvent e) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-
-        @Override
-        public void windowDeactivated(WindowEvent e) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-     }
+      
      class F implements ActionListener{
          public void actionPerformed(ActionEvent e)
          {
@@ -222,7 +182,11 @@ public class MiniCalci extends Frame {
              l4.setText(null);
          }
      }
-     
+     class Demo extends WindowAdapter{
+         public void windowClosing(WindowEvent e){
+             dispose();
+         }
+     }
     
     public static void main(String...s)
     {
